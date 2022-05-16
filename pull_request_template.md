@@ -6,5 +6,5 @@ _Add more context to describe changes..._
 [Example](https://docs.python.org/3/library/tkinter.html)
 _You can put all the libraries that you used..._
 ### Checks
-- [ ] Added Stop function
+- [x] Added Stop function
 - [ ] Added Presets
