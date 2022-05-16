@@ -4,9 +4,9 @@
 This project is for our Object Oriented Programming for ECE, class ECE115.2_16JK_21-22-2. 
 
 
-## Features that would include
-Start/Stop function
+## Features 
 
+- Start/Stop function
 - Split Lapse Function
 - Reset 
 - sounds using winsound module
