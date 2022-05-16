@@ -3,7 +3,7 @@
 # About 
 This project is for our Object Oriented Programming for ECE, class ECE115.2_16JK_21-22-2. 
 
-Guidelines are found [_here_](https://github.com/LouisJayCaro/Stopwatch_project/files/8703825/2022.Programming.Group.Exam.pdf)
+Guidelines are found [_here_](https://github.com/LouisJayCaro/Stopwatch_project/files/8703825/2022.Programming.Group.Exam.pdf).
 
 ## Features 
 
