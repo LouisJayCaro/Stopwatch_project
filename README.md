@@ -10,5 +10,5 @@ Guidelines are found [_here_](https://github.com/LouisJayCaro/Stopwatch_project/
 - Start/Stop function
 - Split Lapse Function
 - Reset 
-- sounds using winsound module
+- sounds using beepy module
 - GUI using PyQt5
