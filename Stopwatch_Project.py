@@ -102,7 +102,7 @@ class Stopwatch(QMainWindow):
     # Sets Button Labels
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Python Stopwatch"))
         self.StartButton.setText(_translate("MainWindow", "Start"))
         self.LapButton.setText(_translate("MainWindow", "Split"))
         self.ResetButton.setText(_translate("MainWindow", "Reset"))
