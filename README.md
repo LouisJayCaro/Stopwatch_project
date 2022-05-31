@@ -10,5 +10,6 @@ Guidelines are found [_here_](https://github.com/LouisJayCaro/Stopwatch_project/
 - Start/Stop function
 - Split Lapse Function
 - Reset 
+- Dark mode theme
 - sounds using beepy module
 - GUI using PyQt5
