@@ -3,7 +3,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import QTimer, Qt
 from PyQt5.QtGui import QPalette, QColor
-import winsound
+from beeply.notes import *
 
 
 class Stopwatch(QMainWindow):
@@ -220,19 +220,13 @@ class Stopwatch(QMainWindow):
             self.palette.setColor(QPalette.HighlightedText, Qt.white)
             app.setPalette(self.palette)
     
+    # Plays a "Beep" sound when start/stop button is pressed
     def Sounds(self):
-        if self.StartButton.text() == "Start":
-            frequency = 1900
-            duration = 150
-            winsound.Beep(frequency, duration)
-        elif self.StartButton.text() == "Stop":
-            frequency = 1900
-            duration = 150
-            winsound.Beep(frequency, duration)
+        sound = beeps()
+        if self.StartButton.text() == "Stop":
+            sound.hear('A_', 400)
         elif self.StartButton.text() == "Resume":
-            frequency = 1700
-            duration = 150
-            winsound.Beep(frequency, duration)
+            sound.hear('C_', 500)
 
 if __name__ == "__main__":
     import sys
