@@ -6,3 +6,4 @@ PyQt5-sip==12.10.1
 python-dotenv==0.20.0
 qt5-applications==5.15.2.2.2
 qt5-tools==5.15.2.1.2
+winsound==3.10.4
