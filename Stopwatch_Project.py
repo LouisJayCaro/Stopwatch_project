@@ -178,6 +178,7 @@ class Stopwatch(QMainWindow):
         self.Timer.display(str(self.counter))
         self.listWidget.clear()
     
+    # Handles the Lap Button
     def Lap(self):
         if self.startWatch == True:
             self.Lapnumber += 1
@@ -186,6 +187,7 @@ class Stopwatch(QMainWindow):
             elif self.Lapnumber  <10:
                 self.listWidget.addItem(f"Lap {self.Lapnumber}                      {self.Timer_displayed}")
 
+    # Handles toggling of Dark Mode
     def Dark_Mode(self, state):
         if state == QtCore.Qt.Checked:
             app.setStyle("Fusion")
@@ -224,9 +226,11 @@ class Stopwatch(QMainWindow):
     def Sounds(self):
         sound = beeps()
         if self.StartButton.text() == "Stop":
-            sound.hear('A_', 400)
+            sound.hear('C_', 100)
+            sound.hear('G_', 100)
         elif self.StartButton.text() == "Resume":
-            sound.hear('C_', 500)
+            sound.hear('G_', 100)
+            sound.hear('C_', 100)
 
 if __name__ == "__main__":
     import sys
