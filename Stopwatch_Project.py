@@ -223,15 +223,15 @@ class Stopwatch(QMainWindow):
     def Sounds(self):
         if self.StartButton.text() == "Start":
             frequency = 1900
-            duration = 300
+            duration = 150
             winsound.Beep(frequency, duration)
         elif self.StartButton.text() == "Stop":
             frequency = 1900
-            duration = 300
+            duration = 150
             winsound.Beep(frequency, duration)
         elif self.StartButton.text() == "Resume":
             frequency = 1700
-            duration = 300
+            duration = 150
             winsound.Beep(frequency, duration)
 
 if __name__ == "__main__":
