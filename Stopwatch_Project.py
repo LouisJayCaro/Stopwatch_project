@@ -2,7 +2,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import QTimer, Qt
+from PyQt5.QtGui import QPalette, QColor
 
 
 class Stopwatch(QMainWindow):
@@ -12,6 +13,8 @@ class Stopwatch(QMainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(839, 685)
         MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
+        app.setStyle("Fusion")  
+        self.palette = QPalette()
 
         #Widgets
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -72,6 +75,13 @@ class Stopwatch(QMainWindow):
         self.horizontalLayout.addWidget(self.ResetButton)
         self.ResetButton.pressed.connect(self.Reset)    # Connects RessetButton to the Reset method
 
+        # Darkmode Check Button
+        self.DarkMode = QtWidgets.QCheckBox(self.centralwidget)
+        self.DarkMode.setGeometry(QtCore.QRect(730, 650, 91, 20))
+        self.DarkMode.setObjectName("DarkMode")
+        self.DarkMode.stateChanged.connect(self.Dark_Mode)
+        
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.listWidget = QtWidgets.QListWidget(self.centralwidget)
         self.listWidget.setGeometry(QtCore.QRect(290, 310, 256, 192))
@@ -103,6 +113,7 @@ class Stopwatch(QMainWindow):
         self.StartButton.setText(_translate("MainWindow", "Start"))
         self.LapButton.setText(_translate("MainWindow", "Split"))
         self.ResetButton.setText(_translate("MainWindow", "Reset"))
+        self.DarkMode.setText(_translate("MainWindow", "Dark Mode"))
         
     # Actions
 
@@ -171,6 +182,39 @@ class Stopwatch(QMainWindow):
             elif self.Lapnumber  <10:
                 self.listWidget.addItem(f"Lap {self.Lapnumber}                      {self.Timer_displayed}")
 
+    def Dark_Mode(self, state):
+        if state == QtCore.Qt.Checked:
+            app.setStyle("Fusion")
+            # Now use a palette to switch to dark colors:
+            self.palette.setColor(QPalette.Window, QColor(53, 53, 53))
+            self.palette.setColor(QPalette.WindowText, Qt.white)
+            self.palette.setColor(QPalette.Base, QColor(25, 25, 25))
+            self.palette.setColor(QPalette.AlternateBase, QColor(53, 53, 53))
+            self.palette.setColor(QPalette.ToolTipBase, Qt.black)
+            self.palette.setColor(QPalette.ToolTipText, Qt.white)
+            self.palette.setColor(QPalette.Text, Qt.white)
+            self.palette.setColor(QPalette.Button, QColor(53, 53, 53))
+            self.palette.setColor(QPalette.ButtonText, Qt.white)
+            self.palette.setColor(QPalette.BrightText, Qt.red)
+            self.palette.setColor(QPalette.Link, QColor(42, 130, 218))
+            self.palette.setColor(QPalette.Highlight, QColor(42, 130, 218))
+            self.palette.setColor(QPalette.HighlightedText, Qt.black)
+            app.setPalette(self.palette)
+        else: 
+            self.palette.setColor(QPalette.Window, QColor(240, 240, 240))
+            self.palette.setColor(QPalette.WindowText, Qt.black)
+            self.palette.setColor(QPalette.Base, QColor(255, 255, 255))
+            self.palette.setColor(QPalette.AlternateBase, QColor(240, 240, 240))
+            self.palette.setColor(QPalette.ToolTipBase, Qt.white)
+            self.palette.setColor(QPalette.ToolTipText, Qt.black)
+            self.palette.setColor(QPalette.Text, Qt.black)
+            self.palette.setColor(QPalette.Button, QColor(240, 240, 240))
+            self.palette.setColor(QPalette.ButtonText, Qt.black)
+            self.palette.setColor(QPalette.BrightText, Qt.red)
+            self.palette.setColor(QPalette.Link, QColor(0, 120, 215))
+            self.palette.setColor(QPalette.Highlight, QColor(42, 130, 218))
+            self.palette.setColor(QPalette.HighlightedText, Qt.white)
+            app.setPalette(self.palette)
 
 if __name__ == "__main__":
     import sys
