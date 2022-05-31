@@ -15,7 +15,27 @@ class Stopwatch(QMainWindow):
         MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
         app.setStyle("Fusion")  
         self.palette = QPalette()
-
+        
+        #Window Icon example
+        '''
+        self.setWindowIcon(QtGui.QIcon('logo.png'))
+        # set the title
+        
+        self.setWindowTitle("Icon")
+  
+        # setting  the geometry of window
+        self.setGeometry(0, 0, 400, 300)
+  
+        # creating a label widget
+        self.label = QLabel("Icon is set", self)
+  
+        # moving position
+        self.label.move(100, 100)
+  
+        # setting up border
+        self.label.setStyleSheet("border: 1px solid black;")
+        '''
+        
         #Widgets
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
