@@ -226,11 +226,11 @@ class Stopwatch(QMainWindow):
     def Sounds(self):
         sound = beeps()
         if self.StartButton.text() == "Stop":
-            sound.hear('C_', 100)
-            sound.hear('G_', 100)
+            sound.hear('A_', 100)
+            sound.hear('E_', 100)
         elif self.StartButton.text() == "Resume":
-            sound.hear('G_', 100)
-            sound.hear('C_', 100)
+            sound.hear('A_', 100)
+            sound.hear('E_', 100)
 
 if __name__ == "__main__":
     import sys
